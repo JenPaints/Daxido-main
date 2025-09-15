@@ -59,14 +59,21 @@ function App() {
         
         if (pageMap[hash]) {
           setCurrentPage(pageMap[hash]);
+          // Auto scroll to top when navigating to a new page
+          window.scrollTo(0, 0);
         }
       } else {
         setCurrentPage('home');
+        // Auto scroll to top when going to home page
+        window.scrollTo(0, 0);
       }
     };
 
     // Check initial hash
     handleHashChange();
+    
+    // Scroll to top on initial load
+    window.scrollTo(0, 0);
     
     // Listen for hash changes
     window.addEventListener('hashchange', handleHashChange);
@@ -237,7 +244,7 @@ function App() {
           },
           {
             section: "Dispute Resolution and Governing Law",
-            content: "Any disputes arising from these terms or use of our services shall be resolved through binding arbitration in accordance with Indian Arbitration and Conciliation Act, 2015. These terms are governed by Indian law. For any legal proceedings, jurisdiction shall be with the courts in Mumbai, Maharashtra, India."
+            content: "Any disputes arising from these terms or use of our services shall be resolved through binding arbitration in accordance with Indian Arbitration and Conciliation Act, 2015. These terms are governed by Indian law. For any legal proceedings, jurisdiction shall be with the courts in Bangalore, Karnataka, India."
           },
           {
             section: "Termination and Account Suspension",
@@ -373,15 +380,19 @@ function App() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-12">
             <div className="mb-8">
-              <a
-                href="#"
-                className="flex items-center text-[#B68D40] hover:text-[#D6AD60] transition-colors mb-6"
-              >
-                <ArrowRight className="w-4 h-4 mr-2 rotate-180" />
-                Back to Home
-              </a>
-              <h1 className="text-4xl font-bold text-[#122620] mb-2">{page.title}</h1>
-              <p className="text-gray-600">Last updated: {page.lastUpdated}</p>
+              <div className="flex justify-between items-start mb-6">
+                <div>
+                  <h1 className="text-4xl font-bold text-[#122620] mb-2">{page.title}</h1>
+                  <p className="text-gray-600">Last updated: {page.lastUpdated}</p>
+                </div>
+                <a
+                  href="#"
+                  className="flex items-center text-[#B68D40] hover:text-[#D6AD60] transition-colors"
+                >
+                  Back to Home
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </a>
+              </div>
             </div>
 
             <div className="prose prose-lg max-w-none">

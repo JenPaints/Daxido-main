@@ -1,19 +1,25 @@
 import { ArrowRight } from 'lucide-react';
+import { useEffect } from 'react';
 
 const Press = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="min-h-screen bg-[#F4EBD0] pt-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-12">
           <div className="mb-8">
-            <a
-              href="#"
-              className="flex items-center text-[#B68D40] hover:text-[#D6AD60] transition-colors mb-6"
-            >
-              <ArrowRight className="w-4 h-4 mr-2 rotate-180" />
-              Back to Home
-            </a>
-            <h1 className="text-4xl font-bold text-[#122620] mb-2">Press</h1>
+            <div className="flex justify-between items-start mb-6">
+              <h1 className="text-4xl font-bold text-[#122620] mb-2">Press</h1>
+              <a
+                href="#"
+                className="flex items-center text-[#B68D40] hover:text-[#D6AD60] transition-colors"
+              >
+                Back to Home
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </a>
+            </div>
           </div>
 
           <div className="prose prose-lg max-w-none">

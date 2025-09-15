@@ -1,19 +1,25 @@
 import { ArrowRight, Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { useEffect } from 'react';
 
 const Contact = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="min-h-screen bg-[#F4EBD0] pt-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-12">
           <div className="mb-8">
-            <a
-              href="#"
-              className="flex items-center text-[#B68D40] hover:text-[#D6AD60] transition-colors mb-6"
-            >
-              <ArrowRight className="w-4 h-4 mr-2 rotate-180" />
-              Back to Home
-            </a>
-            <h1 className="text-4xl font-bold text-[#122620] mb-2">Contact Us</h1>
+            <div className="flex justify-between items-start mb-6">
+              <h1 className="text-4xl font-bold text-[#122620] mb-2">Contact Us</h1>
+              <a
+                href="#"
+                className="flex items-center text-[#B68D40] hover:text-[#D6AD60] transition-colors"
+              >
+                Back to Home
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </a>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -46,7 +52,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-[#122620] mb-2">Headquarters</h3>
-                  <p className="text-gray-700 mb-2">Mumbai, Maharashtra, India</p>
+                  <p className="text-gray-700 mb-2">Bangalore, Karnataka, India</p>
                   <p className="text-gray-600 text-sm">DaxiDo Technologies Services Private Limited</p>
                 </div>
               </div>
@@ -107,7 +113,7 @@ const Contact = () => {
             <div className="mb-8">
               <h2 className="text-2xl font-semibold text-[#122620] mb-4">Founder</h2>
               <p className="text-gray-700 leading-relaxed">
-                Founded by <strong>Naiyaz Faiyaz Ahmed</strong>, DaxiDo Technologies Services Private Limited is revolutionizing transportation with our premium ride-hailing platform. Our headquarters is located in Mumbai, serving customers across India with cutting-edge technology and exceptional service.
+                Founded by <strong>Naiyaz Faiyaz Ahmed</strong>, DaxiDo Technologies Services Private Limited is revolutionizing transportation with our premium ride-hailing platform. Our headquarters is located in Bangalore, Karnataka, serving customers across India with cutting-edge technology and exceptional service.
               </p>
             </div>
 
